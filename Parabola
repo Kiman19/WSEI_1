@@ -1,0 +1,61 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main() {
+    double a , b , c , delta , w1 , w2 , x1 , x2 ;
+    cout << "Podaj wartości dla równania kwadratowego: ax^2 + bx + c" << endl;
+    cout << "Podaj wartość dla a: " << endl;
+    for(int i = a ; i < 10 ; i++) {
+        cin >> i;
+        if (i != 0) {
+            a = i;
+            break;
+        }
+        else {
+            cout << "Nieprawidłowa wartość." << endl;
+            cout << "Podaj poprawną wartość: " << endl;
+        }
+    }
+    cout << "Podaj wartość dla b: " << endl;
+    for(int i = b ; i < 10 ; i++){
+        cin >> i;
+        if (i != 0) {
+            b = i;
+            break;
+        } else {
+            cout << "Nieprawidłowa wartość." << endl;
+            cout << "Podaj poprawną wartość: " << endl;
+        }
+    }
+    cout << "Podaj wartość dla c: " << endl;
+    for(int i = c ; i < 10 ; i++) {
+        cin >> i;
+        if (i != 0) {
+            c = i;
+            break;
+        } else {
+            cout << "Nieprawidłowa wartość." << endl;
+            cout << "Podaj poprawną wartość: " << endl;
+        }
+    }
+    delta = pow(b,2)-4*a*c;
+    cout << "Delta jest równa: " << delta << endl << endl;
+    w1 = -b/(2*a) ;
+    w2 = -delta/(4*a);
+    cout << "Współrzędne wierzchołka x: " << w1 << endl;
+    cout << "Współrzędne wierzchołka y: " << w2 << endl << endl;
+    if(delta >= 0){
+        if(delta > 0){
+            x1 = (-b-sqrt(delta))/(2*a);
+            x2 = (-b+sqrt(delta))/(2*a);
+            cout << "x jest równy: " << x1 << endl << "lub" << endl << "x jest równy: " << x2 << endl;
+        }
+        else{
+            cout << "x jest równy: " << w1 << endl;
+        }
+    }
+    else{
+        cout << "Brak miejsc zerowych." << endl;
+    }
+    return 0;
+}
